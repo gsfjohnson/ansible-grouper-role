@@ -1,4 +1,12 @@
 ---
 
-grpr_yum_deps: []
+grpr_yum_deps:
+  - ant
+  - tomcat
+  - httpd
+  - mod_ssl
 
+grpr_ui_url: http://software.internet2.edu/grouper/release/2.2.1/grouper.ui-2.2.1.tar.gz
+grpr_ws_url: http://software.internet2.edu/grouper/release/2.2.1/grouper.ws-2.2.1.tar.gz
+grpr_client_url: http://software.internet2.edu/grouper/release/2.2.1/grouper.clientBinary-2.2.1.tar.gz
+grpr_api_url: http://software.internet2.edu/grouper/release/2.2.1/grouper.apiBinary-2.2.1.tar.gz

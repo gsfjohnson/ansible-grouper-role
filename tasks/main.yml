@@ -4,4 +4,9 @@
   yum: name={{ item }} state=latest
   with_items: grpr_yum_deps
 
+- name: download ui
+  get_url: url="{{grpr_ui_url}}" dest=/tmp
+
+- name: create dir
+  file: path=/srv/grouper state=directory mode=0755
 
