@@ -18,3 +18,5 @@ grpr_components:
   - ws
   - clientBinary
   - apiBinary
+
+grpr_conf_api: []

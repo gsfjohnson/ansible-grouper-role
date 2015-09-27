@@ -14,3 +14,10 @@
 - name: unarchive components
   unarchive: src=/tmp/grouper.{{item}}-{{grpr_ver}}.tar.gz dest=/srv/grouper owner=vagrant group=vagrant
   with_items: grpr_components
+
+- name: configure api
+  lineinfile: >
+    dest="/srv/grouper/apiBinary-{{grpr_ver}}/conf/grouper.properties"
+    line="{{item}}"
+    state=present
+  with_items: grpr_conf_api
