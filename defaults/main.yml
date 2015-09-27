@@ -1,5 +1,7 @@
 ---
 
+grpr_ver: 2.2.1
+
 grpr_yum_deps:
   - ant
   - tomcat

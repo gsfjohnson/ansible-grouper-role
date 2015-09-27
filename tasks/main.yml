@@ -4,9 +4,11 @@
   yum: name={{ item }} state=latest
   with_items: grpr_yum_deps
 
+- name: create dir
+  file: path=/srv/grouper state=directory mode=0755 owner=vagrant group=vagrant
+
 - name: download ui
   get_url: url="{{grpr_ui_url}}" dest=/tmp
 
-- name: create dir
-  file: path=/srv/grouper state=directory mode=0755
-
+- name: unarchive ui
+  unarchive: src=/tmp/grouper.ui-{{grpr_ver}}.tar.gz dest=/srv/grouper owner=vagrant group=vagrant
