@@ -17,7 +17,7 @@
 
 - name: configure api
   lineinfile: >
-    dest="/srv/grouper/apiBinary-{{grpr_ver}}/conf/grouper.properties"
+    dest="/srv/grouper/grouper.apiBinary-{{grpr_ver}}/conf/grouper.properties"
     line="{{item}}"
     state=present
   with_items: grpr_conf_api
