@@ -7,8 +7,10 @@
 - name: create dir
   file: path=/srv/grouper state=directory mode=0755 owner=vagrant group=vagrant
 
-- name: download ui
-  get_url: url="{{grpr_ui_url}}" dest=/tmp
+- name: download components
+  get_url: url="http://software.internet2.edu/grouper/release/{{grpr_ver}}/grouper.{{item}}-{{grpr_ver}}.tar.gz" dest=/tmp
+  with_items: grpr_components
 
-- name: unarchive ui
-  unarchive: src=/tmp/grouper.ui-{{grpr_ver}}.tar.gz dest=/srv/grouper owner=vagrant group=vagrant
+- name: unarchive components
+  unarchive: src=/tmp/grouper.{{item}}-{{grpr_ver}}.tar.gz dest=/srv/grouper owner=vagrant group=vagrant
+  with_items: grpr_components
